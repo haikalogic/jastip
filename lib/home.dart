@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jastip_v2/product.dart';
+import './product.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatelessWidget { 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +42,50 @@ class HomePage extends StatelessWidget {
               width: 200,
               color: Color(0xFF2d98da),
             ),
-            new Container(
-              width: 300.0,
-              height: 100.0,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            Padding(
+              padding: const EdgeInsets.only(top:20.0, left: 8.0, right: 8.0,bottom: 4.0),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProductPage(),
+                            ));
+                },
+              child: new Container(
+                color: Color(0xffeeeeee),
+                height: 100.0,
+                width: 340.0,
+                child: new Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left:8.0, right: 20.0, top: 16.0, bottom: 16.0),
+                      child: new Image.asset("img/korea.png"),
+                    ),
+                    new Text("Open Pre Order\n15-30 Oktober")
+                  ],
+                ),
+
+              ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0,bottom: 8.0),
+              child: new Container(
+                color: Color(0xffeeeeee),
+                height: 100.0,
+                width: 340.0,
+                child: new Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left:8.0, right: 20.0, top: 16.0, bottom: 16.0),
+                      child: new Image.asset("img/jepang.png"),
+                    ),
+                    new Text("Open Pre Order\n15-30 Oktober")
+                  ],
+                ),
+                
+              ),
             )
           ],
         ),
